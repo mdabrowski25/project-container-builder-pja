@@ -7,9 +7,9 @@ public class ContainerGenerator {
 
     public UniversalContainer generateUniversalContainer() {
         ContainerSizeType randomizedSize = randomEnum(ContainerSizeType.class);
-        int weight = random.nextInt(1000);
-        int numberOfPackages = random.nextInt(4500);
-        return new UniversalContainer(weight, randomizedSize, numberOfPackages);
+        int randomizedWeight = random.nextInt(1000);
+        int randomizedNumberOfPackages = random.nextInt(4500);
+        return new UniversalContainer(randomizedWeight, randomizedSize, randomizedNumberOfPackages);
     }
 
     private <T extends Enum<?>> T randomEnum(Class<T> clazz){
