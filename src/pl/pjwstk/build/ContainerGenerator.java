@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class ContainerGenerator {
     Random random = new Random();
+
     public UniversalContainer generateUniversalContainer() {
         ContainerSizeType randomizedSize = randomEnum(ContainerSizeType.class);
         int weight = random.nextInt(1000);

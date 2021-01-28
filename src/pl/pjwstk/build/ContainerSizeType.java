@@ -1,21 +1,22 @@
 package pl.pjwstk.build;
 
 public enum ContainerSizeType {
-    c20("Container 20'", 590,239, 2300),
-    c40("Container 40'", 1200, 239, 3750),
-    c40hc("Container 40' HIGH CUBE",1200,270, 3850);
+    c20("Container 20'", 590,235,239, 2300),
+    c40("Container 40'", 1200, 235,239, 3750),
+    c40hc("Container 40' HIGH CUBE",1200,235,270, 3850);
 
-    private int weight;
-    private int height;
-    private String description;
-    private int lengthA;
+    private final int weight;
+    private final int height;
+    private final String description;
+    private final int lengthA;
+    private final int lengthB;
 
-    ContainerSizeType(String description, int lengthA, int height, int weight) {
+    ContainerSizeType(String description, int lengthA, int lengthB, int height, int weight) {
         this.weight = weight;
         this.height = height;
         this.description = description;
         this.lengthA = lengthA;
-        int lengthB = 235;
+        this.lengthB = lengthB;
     }
 
     int getWeight() {
@@ -32,5 +33,9 @@ public enum ContainerSizeType {
 
     int getLengthA() {
         return lengthA;
+    }
+
+    int getLengthB() {
+        return lengthB;
     }
 }
