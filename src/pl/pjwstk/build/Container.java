@@ -3,12 +3,11 @@ package pl.pjwstk.build;
 public abstract class Container {
     private int weight;
     private ContainerSizeType sizeType;
-    private String serialNumber;
 
     protected Container(int weight, ContainerSizeType sizeType) {
-        this.weight = weight;
+        this.weight = weight + sizeType.getWeight();
         this.sizeType = sizeType;
-        this.serialNumber = "CON-";
+
     }
 
     protected int getWeight() {
@@ -27,11 +26,9 @@ public abstract class Container {
         this.sizeType = sizeType;
     }
 
-    protected String getSerialNumber() {
-        return serialNumber;
-    }
-
-    protected void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
+    @Override
+    public String toString() {
+        return "weight=" + weight +
+                ", sizeType=" + sizeType;
     }
 }
