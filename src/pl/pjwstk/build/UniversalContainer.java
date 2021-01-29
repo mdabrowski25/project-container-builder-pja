@@ -1,7 +1,6 @@
 package pl.pjwstk.build;
 
 
-import java.util.Objects;
 
 public class UniversalContainer extends Container {
     private final String description = "DRY general";
@@ -27,20 +26,7 @@ public class UniversalContainer extends Container {
     @Override
     public String toString() {
         return " UniversalContainer {" + " SERIAL: "  + getSerial() +
-                ", description = " + description +
-                ", numberOfPackages = " + numberOfPackages + ", " + super.toString() + " }";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UniversalContainer that = (UniversalContainer) o;
-        return numberOfPackages == that.numberOfPackages;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(description, numberOfPackages);
+                ", numberOfPackages = " + numberOfPackages + ", " + super.toString() +
+                ", description = " + description + " }";
     }
 }
