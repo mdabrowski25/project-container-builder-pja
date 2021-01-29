@@ -3,11 +3,20 @@ package pl.pjwstk.build;
 public abstract class Container {
     private int weight;
     private ContainerSizeType sizeType;
+    private String productType;
+    private int serial;
+    private int counter = 1;
 
-    protected Container(int weight, ContainerSizeType sizeType) {
+    protected Container(int weight, ContainerSizeType sizeType, String productType) {
+        this.productType = productType;
+        this.serial = generateId();
         this.weight = weight + sizeType.getWeight();
         this.sizeType = sizeType;
 
+    }
+
+    private int generateId() {
+        return counter++;
     }
 
     protected int getWeight() {
@@ -26,9 +35,25 @@ public abstract class Container {
         this.sizeType = sizeType;
     }
 
+    protected String getProductType() {
+        return productType;
+    }
+
+    protected void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    protected int getSerial() {
+        return serial;
+    }
+
+    protected void setSerial(int serial) {
+        this.serial = serial;
+    }
+
     @Override
     public String toString() {
-        return "weight=" + weight +
-                ", sizeType=" + sizeType;
+        return "product type = " + productType + ", weight = " + weight +
+                ", sizeType = " + sizeType;
     }
 }
