@@ -18,7 +18,6 @@ public abstract class TemperatureControlledContainer extends Container {
 
     @Override
     public String toString() {
-        return " SERIAL: "  + getSerial() +
-                ", temperature = " + temperature + ", " + super.toString() + " }";
+        return "SERIAL: "  + getSerial() + gap() + "temperature: " + temperature + gap() + super.toString();
     }
 }

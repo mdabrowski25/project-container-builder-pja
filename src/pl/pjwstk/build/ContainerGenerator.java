@@ -9,7 +9,7 @@ public class ContainerGenerator {
 
     public UniversalContainer generateUniversalContainer() {
         ContainerSizeType randomizedSize = randomEnum(ContainerSizeType.class);
-        int randomizedWeight = random.nextInt(1000);
+        int randomizedWeight = random.nextInt(1500);
         int randomizedNumberOfPackages = random.nextInt(4500);
         String randomizedDryProductType = dryProductTypes[random.nextInt(dryProductTypes.length)];
 
