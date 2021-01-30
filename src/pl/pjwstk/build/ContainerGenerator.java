@@ -4,14 +4,15 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ContainerGenerator {
-    Random random = new Random();
-    String[] dryProductTypes = {"Currier posts", "pallets", "chests", "cartoons",
+    private final Random random = new Random();
+    private final String[] dryProductTypes = {"Currier posts", "pallets", "chests", "cartoons",
             "furniture", "PC hardware", "plastic", "toys"};
-    String[] gasProductTypes = {"LPG", "gasoline", "diesel", "LNG", "CNG", "nitrogen", "oil"};
-    String[] highTempProductTypes = {"fabrics", "tapes", "cables", "ropes", "sleeves", "tadpoles", "sewing"};
-    String[] chilledTempProductTypes = {"bananas", "apples", "grapes", "vaccines", "wine"};
-    String[] coldTempProductTypes = {"ice", "ice cream", "seafood", "poultry", "red meat"};
-    String[] thermalTempProductTypes = {"paints", "sport balls", "glue"};
+    private final String[] gasProductTypes = {"LPG", "gasoline", "diesel", "LNG", "CNG", "nitrogen", "oil"};
+    private final String[] highTempProductTypes = {"fabrics", "tapes", "cables", "ropes", "sleeves", "tadpoles", "sewing"};
+    private final String[] chilledTempProductTypes = {"bananas", "apples", "grapes", "vaccines", "wine"};
+    private final String[] coldTempProductTypes = {"ice", "ice cream", "seafood", "poultry", "red meat"};
+    private final String[] thermalTempProductTypes = {"paints", "sport balls", "glue"};
+    private final String[] ventilatedProductTypes = {"animals", "coffee beans", "garlic"};
 
     public UniversalContainer generateUniversalContainer() {
         ContainerSizeType randomizedSize = randomSizeEnum();
@@ -65,6 +66,21 @@ public class ContainerGenerator {
         int randomizedTemp = ThreadLocalRandom.current().nextInt(5, 17 + 1);
 
         return new ThermalContainer(randomizedWeight, randomizedSize, randomizedThermalTempProductType, randomizedTemp);
+    }
+
+    public PowerSupplyContainer generatePowerSupplyContainer() {
+        ContainerSizeType randomizedSize = randomSizeEnum();
+        int randomizedWeight = random.nextInt((14000 - 7500) + 1) + 7500;
+
+        return new PowerSupplyContainer(randomizedWeight, randomizedSize, "kW");
+    }
+
+    public VentilatedContainer generateVentilatedContainer() {
+        ContainerSizeType randomizedSize = randomSizeEnum();
+        int randomizedWeight = random.nextInt((15000 - 6000) + 1) + 6000;
+        String randomizedVentilatedProductType = ventilatedProductTypes[random.nextInt(ventilatedProductTypes.length)];
+
+        return new VentilatedContainer(randomizedWeight, randomizedSize, randomizedVentilatedProductType);
     }
 
     private ContainerSizeType randomSizeEnum() {

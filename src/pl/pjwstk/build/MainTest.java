@@ -20,5 +20,11 @@ public class MainTest {
 
         ThermalContainer thermalContainer = containerGenerator.generateThermalContainer();
         System.out.println(thermalContainer.toString());
+
+        PowerSupplyContainer powerSupplyContainer = containerGenerator.generatePowerSupplyContainer();
+        System.out.println(powerSupplyContainer.toString());
+
+        VentilatedContainer ventilatedContainer = containerGenerator.generateVentilatedContainer();
+        System.out.println(ventilatedContainer.toString());
     }
 }
