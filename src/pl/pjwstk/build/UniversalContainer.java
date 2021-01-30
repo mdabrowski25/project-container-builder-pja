@@ -25,8 +25,8 @@ public class UniversalContainer extends Container {
 
     @Override
     public String toString() {
-        return "ContainerType: UniversalContainer" + gap() + "SERIAL: "  + getSerial() + gap() +
-                "numberOfPackages: " + numberOfPackages + gap() + super.toString() + gap() +
-                "description: " + description;
+        return "ContainerType:  UniversalContainer" + gap() + "SERIAL:  "  + getSerial() + gap() +
+                "numberOfPackages:  " + numberOfPackages + gap() + super.toString() + gap() +
+                "description:  " + description;
     }
 }

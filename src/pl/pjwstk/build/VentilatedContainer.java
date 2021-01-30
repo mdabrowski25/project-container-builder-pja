@@ -13,7 +13,7 @@ public class VentilatedContainer extends Container {
 
     @Override
     public String toString() {
-        return "ContainerType: VentilatedContainer" + gap() + "SERIAL: " + getSerial() + gap() + super.toString() +
-                gap() + "description: " + description;
+        return "ContainerType:  VentilatedContainer" + gap() + "SERIAL:  " + getSerial() + gap() + super.toString() +
+                gap() + "description:  " + description;
     }
 }

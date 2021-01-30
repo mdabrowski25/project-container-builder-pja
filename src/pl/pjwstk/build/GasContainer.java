@@ -13,7 +13,7 @@ public class GasContainer extends Container {
 
     @Override
     public String toString() {
-        return "ContainerType: GasContainer" + gap() + "SERIAL: " + getSerial() + gap() + super.toString() +
-                gap() + "description: " + description;
+        return "ContainerType:  GasContainer" + gap() + "SERIAL:  " + getSerial() + gap() + super.toString() +
+                gap() + "description:  " + description;
     }
 }

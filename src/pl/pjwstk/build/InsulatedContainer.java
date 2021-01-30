@@ -13,7 +13,7 @@ public class InsulatedContainer extends TemperatureControlledContainer {
 
     @Override
     public String toString() {
-        return "ContainerType: InsulatedContainer" + gap() + super.toString() + gap() +
-                "description: " + description;
+        return "ContainerType:  InsulatedContainer" + gap() + super.toString() + gap() +
+                "description:  " + description;
     }
 }

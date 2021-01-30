@@ -13,7 +13,7 @@ public class PowerSupplyContainer extends Container {
 
     @Override
     public String toString() {
-        return "ContainerType: PowerSupplyContainer" + gap() + "SERIAL: " + getSerial() + gap() + super.toString() +
-                gap() + "description: " + description;
+        return "ContainerType:  PowerSupplyContainer" + gap() + "SERIAL:  " + getSerial() + gap() + super.toString() +
+                gap() + "description:  " + description;
     }
 }

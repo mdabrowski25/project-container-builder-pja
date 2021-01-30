@@ -52,8 +52,8 @@ public abstract class Container {
 
     @Override
     public String toString() {
-        return "productType: " + productType + gap() +"weight: " + weight + gap() +
-                "sizeType: " + sizeType;
+        return "productType:  " + productType + gap() +"weight:  " + weight + gap() +
+                "sizeType:  " + sizeType;
     }
 
     protected String gap() {
