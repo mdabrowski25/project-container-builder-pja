@@ -94,4 +94,8 @@ public class ContainerGenerator {
                 return ContainerSizeType.c40;
         }
     }
+
+    public int randomNumberTo8() {
+        return random.nextInt(9);
+    }
 }
