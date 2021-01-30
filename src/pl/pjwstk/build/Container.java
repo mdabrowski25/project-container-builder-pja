@@ -1,6 +1,10 @@
 package pl.pjwstk.build;
 
-public abstract class Container {
+import java.io.Serializable;
+
+public abstract class Container implements Serializable {
+    private static final long serialVersionUID = 91283569185360L;
+
     private int weight;
     private ContainerSizeType sizeType;
     private String productType;
