@@ -5,14 +5,13 @@ public abstract class Container {
     private ContainerSizeType sizeType;
     private String productType;
     private int serial;
-    private int counter = 1;
+    public static int counter = 1;
 
     protected Container(int weight, ContainerSizeType sizeType, String productType) {
         this.productType = productType;
         this.serial = generateId();
         this.weight = weight + sizeType.getWeight();
         this.sizeType = sizeType;
-
     }
 
     private int generateId() {

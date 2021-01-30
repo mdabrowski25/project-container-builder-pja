@@ -6,6 +6,8 @@ public class Main {
         UniversalContainer universalContainer = containerGenerator.generateUniversalContainer();
         System.out.println(universalContainer.toString());
 
+        GasContainer gasContainer = containerGenerator.generateGasContainer();
+        System.out.println(gasContainer.toString());
 
     }
 }
