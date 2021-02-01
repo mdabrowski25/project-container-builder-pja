@@ -5,7 +5,6 @@ import java.io.*;
 public class ContainerManagement {
     public static boolean isListCreated = false;
 
-
     public void listAllContainers() {
         Container[] containers = produceOrReadContainers();
         for (Container container : containers) {
@@ -17,7 +16,6 @@ public class ContainerManagement {
         Container[] list = new Container[15000];
         ContainersDto containersDto;
         String fileName = "containerList.txt";
-        String serializedFileName = "serializedContainers.obj";
         File file = new File(fileName);
         try {
             if (file.exists()) {
@@ -31,6 +29,7 @@ public class ContainerManagement {
 
         if (!isListCreated) {
             file = new File(fileName);
+            String serializedFileName = "serializedContainers.obj";
             try (
                     var fileWriter = new FileWriter(file);
                     var bufferedWriter = new BufferedWriter(fileWriter);
@@ -49,18 +48,55 @@ public class ContainerManagement {
                 e.printStackTrace();
             }
         } else {
-            try (
-                    var fileInputStream = new FileInputStream(serializedFileName);
-                    var objectInputStream = new ObjectInputStream(fileInputStream)
-            ) {
-                containersDto = (ContainersDto) objectInputStream.readObject();
-                list = containersDto.getContainers();
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-
+            list = getContainers();
         }
         return list;
+    }
+
+    private Container[] getContainers() {
+        Container[] list = new Container[15000];
+        ContainersDto containersDto;
+        try (
+                var fileInputStream = new FileInputStream("serializedContainers.obj");
+                var objectInputStream = new ObjectInputStream(fileInputStream)
+        ) {
+            containersDto = (ContainersDto) objectInputStream.readObject();
+            list = containersDto.getContainers();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public void getAndSortContainers() {
+        Container[] containers = getContainers();
+        int c20counter = 0;
+        int c40counter = 0;
+        for (Container container : containers) {
+            if (container.getSizeType().equals(ContainerSizeType.c20)) {
+                c20counter++;
+            } else {
+                c40counter++;
+            }
+        }
+        Container[] containersC20 = new Container[c20counter];
+        Container[] containersC40 = new Container[c40counter];
+        int index20Counter = 0;
+        int index40Counter = 0;
+        for (Container container : containers) {
+            if (container.getSizeType().equals(ContainerSizeType.c20)) {
+                containersC20[index20Counter++] = container;
+            } else {
+                containersC40[index40Counter++] = container;
+            }
+        }
+
+        for (int i = 0; i < containersC20.length; i++) {
+            for (int j = 0; j < (containersC20.length - i); j++) {
+
+            }
+        }
+
     }
 
     private void generateContainerAndAdd(ContainerGenerator containerGenerator, Container[] list, int i, int randomNumberTo8, PrintWriter writer) {
@@ -106,9 +142,5 @@ public class ContainerManagement {
                 writer.write(ventilatedContainer.toString() + "\n");
                 break;
         }
-    }
-
-    public void getAndSortContainers() {
-
     }
 }
