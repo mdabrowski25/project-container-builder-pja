@@ -42,11 +42,11 @@ public class S22118 {
                         if (isListContainersClicked()) {
                             containerManagement.getAndSortContainers();
                         } else {
-                            System.out.println("Najpierw należy wygenerować liste kontenerów!!!" + "\n");
+                            System.out.println("Najpierw nalezy wygenerowac liste kontenerow!!!" + "\n");
                         }
                         break;
                     default:
-                        System.out.println("Wybrano błędną opcję");
+                        System.out.println("Wybrano bledna opcje");
                 }
             } while (option != Option.EXIT);
         }
@@ -61,7 +61,7 @@ public class S22118 {
                 } catch (NoSuchOptionException e) {
                     System.out.println(e.getMessage());
                 } catch (InputMismatchException e) {
-                    System.out.println("Wprowadzono wartosc ktora nie jest liczbą podaj ponownie");
+                    System.out.println("Wprowadzono wartosc ktora nie jest liczba podaj ponownie");
                 }
             }
             return option;
@@ -77,7 +77,7 @@ public class S22118 {
 
 
         private void printOptions() {
-            System.out.println("Wybierz opcję:");
+            System.out.println("Wybierz opcje:");
             for (Option element : Option.values()) {
                 System.out.println(element.toString());
             }
@@ -89,9 +89,9 @@ public class S22118 {
         }
 
         public enum Option {
-            EXIT(0, "wyjście z programu"),
-            LIST_CONTAINERS(1, "wygeneruj liste wszystkich kontenerów (containerList.txt) i ją wyświetl"),
-            SORTED_CONTAINERS(2, "generuj plik manifest (kolejność załadunku)");
+            EXIT(0, "wyjscie z programu"),
+            LIST_CONTAINERS(1, "wygeneruj liste wszystkich kontenerow (containerList.txt) i ja wyswietl"),
+            SORTED_CONTAINERS(2, "generuj plik manifest (kolejnosc zaladunku)");
 
             private final int value;
             private final String description;
