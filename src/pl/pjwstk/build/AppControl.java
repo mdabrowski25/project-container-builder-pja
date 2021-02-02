@@ -76,8 +76,8 @@ public class AppControl {
 
     private enum Option {
         EXIT(0, "wyjście z programu"),
-        LIST_CONTAINERS(1, "wyswietl liste wszystkich kontenerów"),
-        SORTED_CONTAINERS(2, "kontenery w kolejności załadunku + plik manifest");
+        LIST_CONTAINERS(1, "wygeneruj liste wszystkich kontenerów (containerList.txt) i ją wyświetl"),
+        SORTED_CONTAINERS(2, "generuj plik manifest (kolejność załadunku)");
 
         private final int value;
         private final String description;
