@@ -41,8 +41,9 @@ public class S22118 {
                     case SORTED_CONTAINERS:
                         if (isListContainersClicked()) {
                             containerManagement.getAndSortContainers();
+                            System.out.println("Manifest utworzony \n");
                         } else {
-                            System.out.println("Najpierw nalezy wygenerowac liste kontenerow!!!" + "\n");
+                            System.out.println("Najpierw nalezy wygenerowac liste kontenerow!!! \n");
                         }
                         break;
                     default:
